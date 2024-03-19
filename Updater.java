@@ -29,7 +29,7 @@ public class Updater extends JFrame {
         });
 
         initializeUI();
-//        downloadNewJar();
+        downloadNewJar();
     }
 
     private void initializeUI() {
@@ -53,10 +53,10 @@ public class Updater extends JFrame {
         );
         scrollPane.setBounds(0, 80, 500, 375);
 
-//        JPanel panel = new JPanel(new BorderLayout());
-//        panel.add(progressBar, BorderLayout.NORTH);
-//        panel.add(statusLabel, BorderLayout.CENTER);
-//        panel.add(scrollPane, BorderLayout.SOUTH);
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.add(progressBar, BorderLayout.NORTH);
+        panel.add(statusLabel, BorderLayout.CENTER);
+        panel.add(scrollPane, BorderLayout.SOUTH);
         JPanel panel = new JPanel();
         panel.setLayout(null);
         setResizable(false);
@@ -147,16 +147,16 @@ public class Updater extends JFrame {
     }
 
     public static void main(String[] args) {
-//        if (args.length < 2) {
-//            System.out.println("Usage: java UpdaterApp <old_jar_name>");
-//            System.exit(1);
-//        }
-//
-//        SwingUtilities.invokeLater(() -> {
-//            String oldJarName = args[0];
-//            String newJarName = args[1];
-//            new Updater(oldJarName, newJarName).setVisible(true);
-//        });
+        if (args.length < 2) {
+            System.out.println("Usage: java UpdaterApp <old_jar_name>");
+            System.exit(1);
+        }
+        
+        SwingUtilities.invokeLater(() -> {
+            String oldJarName = args[0];
+            String newJarName = args[1];
+            new Updater(oldJarName, newJarName).setVisible(true);
+        });
         new Updater("old.jar", "new.jar").setVisible(true);
     }
 
